@@ -1,3 +1,5 @@
+This version is as same as oToToT's. It's to be adapted.
+
 # AutoWeatherPtt
 
 Post daily weather information on ptt or any other bbs.
