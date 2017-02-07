@@ -1,5 +1,13 @@
 This version is as same as oToToT's. It's to be adapted.
 
+The reason for making this fork is just to let this python script,
+apply directly in pttbbs or even other TelnetBBS-system (such as Maple-itoc, SOB, or other BBS version)
+
+And it's function going to be made more simply, 
+and just focus on how to simplify the core python script to analyze the info requested from Central Weather Bureau in Taiwan.
+
+And just for test and fun.
+
 # AutoWeatherPtt
 
 Post daily weather information on ptt or any other bbs.
