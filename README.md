@@ -25,7 +25,8 @@ Download `python3` and use `pip` to install `requests`.
 First, you must `su bbsadm` to get into BBS system account.
 
 Clone this repository and install into your BBS binary directory (`/home/bbs/bin`):
-<br>`git clone --branch clam-test https://github.com/holishing/AutoWeatherBBS`
+
+`git clone --branch clam-test https://github.com/holishing/AutoWeatherBBS`
 <br>`cp AutoWeatherBBS/weatherBBS.sh /home/bbs/bin/`
 <br>`cp AutoWeatherBBS/weatherBIG5.py /home/bbs/bin/`
 
@@ -38,7 +39,8 @@ And use `crontab -e` to add your regularly work into it, to make it run automati
 <br>(If you want to know how to set up, use `man crontab` to get help)
 
 or you can try:
-<br>`crontab -l > ~/crontab.now`
+
+`crontab -l > ~/crontab.now`
 <br>`cat AutoWeatherBBS/crontab.reference >> ~/crontab.now`
 <br>`crontab ~/crontab.now`
 <br>to add this crontab to run it regularly.
