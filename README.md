@@ -8,21 +8,21 @@ and just focus on how to simplify the core python script to analyze the info req
 
 And just for test and fun.
 
-# AutoWeatherPtt
+***
+
+# AutoWeatherBBS
 
 Post daily weather information on ptt or any other bbs.
+This version can be post directly by [CurrrentPtt BBS System](https://github.com/ptt/pttbbs).
 
 ##HOWTO
 
-Download python3 an use pip to install requests.
+Download python3 and use pip to install requests.
 
-Apply an Authorization key of http://opendata.cwb.gov.tw/ and edit the authKey variable in weather.py
+Clone this repository and install into your BBS binary directory (`/home/bbs/bin`)
+Apply an Authorization key of [CWB OpenData](http://opendata.cwb.gov.tw/) and edit the authKey variable in weatherBIG5.py
 
-edit user , password and board variables in weather.py
+use `crontab -e` to add your regularly work into it, to make it run automaticly.
+(If you want to know how to set up, use `man crontab` to get help)
 
-Also you can edit host variable if needed
-
-After doing all these preparation, you can just run it or use crontab and the --check=false paramter to post it timely
-
-p.s if you don't want it bottom your post you can add --buttom=false paramter
-
+That's it!
