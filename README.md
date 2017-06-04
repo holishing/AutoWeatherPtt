@@ -13,7 +13,7 @@ And just for test and fun.
 # AutoWeatherBBS
 
 Post daily weather information on ptt or any other bbs.
-This version can be post directly by [CurrrentPtt BBS System](https://github.com/ptt/pttbbs).
+This version can be post directly by [CurrentPtt BBS System](https://github.com/ptt/pttbbs).
 
 ## HOWTO
 
