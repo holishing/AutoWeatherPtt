@@ -15,7 +15,7 @@ And just for test and fun.
 Post daily weather information on ptt or any other bbs.
 This version can be post directly by [CurrrentPtt BBS System](https://github.com/ptt/pttbbs).
 
-##HOWTO
+## HOWTO
 
 Download python3 and use pip to install requests.
 
