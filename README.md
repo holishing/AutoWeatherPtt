@@ -26,7 +26,7 @@ Download `python3` and use `pip` to install `requests`.
 First, you must `su bbsadm` to get into BBS system account.
 <br>Clone this repository and install into your BBS binary directory (`/home/bbs/bin`):
 
-`git clone --branch clam-test https://github.com/holishing/AutoWeatherBBS`
+`git clone https://github.com/holishing/AutoWeatherBBS`
 <br>`cp AutoWeatherBBS/weatherBBS.sh /home/bbs/bin/`
 <br>`cp AutoWeatherBBS/weatherBIG5.py /home/bbs/bin/`
 
