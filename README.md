@@ -18,13 +18,13 @@ Post daily weather information on ptt or any other bbs.
 ## HOWTO
 
 ### Install Python3 & "request" module
+
 Download `python3` and use `pip` to install `requests`.
 
 ### Get this source and Install it!
 
 First, you must `su bbsadm` to get into BBS system account.
-
-Clone this repository and install into your BBS binary directory (`/home/bbs/bin`):
+<br>Clone this repository and install into your BBS binary directory (`/home/bbs/bin`):
 
 `git clone --branch clam-test https://github.com/holishing/AutoWeatherBBS`
 <br>`cp AutoWeatherBBS/weatherBBS.sh /home/bbs/bin/`
@@ -43,7 +43,8 @@ or you can try:
 `crontab -l > ~/crontab.now`
 <br>`cat AutoWeatherBBS/crontab.reference >> ~/crontab.now`
 <br>`crontab ~/crontab.now`
-<br>to add this crontab to run it regularly.
+
+to add this crontab to run it regularly.
 
 ***
 
