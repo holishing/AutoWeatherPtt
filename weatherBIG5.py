@@ -1,6 +1,7 @@
 import requests, telnetlib, sys, time
 import xml.etree.ElementTree as ET
 
+# no need to connect to another host anymore
 """
 host = 'ptt2.cc'
 user = '***'
@@ -10,8 +11,13 @@ password = '***'
 
 """
 
+# Apply an Authorization key of http://opendata.cwb.gov.tw/ and edit the authKey variable
 authKey = " "
+
+# no need to connect to another host anymore
+"""
 #btm=True
+"""
 
 def add0(s):
     if len(s) == 1:
@@ -82,6 +88,7 @@ def addNinFront(s):
         return("　"+s)
     return s
 
+# no need to connect to another host anymore
 """
 
 ##def WriteIntoLog():
@@ -224,6 +231,9 @@ def main():
     file.close()
 
 main()
+
+# no need to connect to another host anymore
+"""
 #if len(sys.argv) > 1:
 #    if sys.argv[1].lower() == '--check=false' or sys.argv[2].lower() == '--check=false':
 #        if sys.argv[1].lower() == '--buttom=false' or sys.argv[2].lower() == '--check=false':
@@ -236,3 +246,4 @@ main()
 #            main()
 #        print("Waiting...")
 #        time.sleep(3600)
+"""
