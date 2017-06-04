@@ -17,7 +17,7 @@ This version can be post directly by [CurrrentPtt BBS System](https://github.com
 
 ## HOWTO
 
-Download python3 and use pip to install requests.
+Download `python3` and use `pip` to install requests.
 
 Clone this repository and install into your BBS binary directory (`/home/bbs/bin`)
 Apply an Authorization key of [CWB OpenData](http://opendata.cwb.gov.tw/) and edit the authKey variable in weatherBIG5.py
