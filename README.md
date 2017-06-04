@@ -17,12 +17,32 @@ This version can be post directly by [CurrentPtt BBS System](https://github.com/
 
 ## HOWTO
 
+### Install Python3 & "request" module
 Download `python3` and use `pip` to install `requests`.
 
-Clone this repository and install into your BBS binary directory (`/home/bbs/bin`)
-Apply an Authorization key of [CWB OpenData](http://opendata.cwb.gov.tw/) and edit the `authKey` variable in `weatherBIG5.py`
+### Get this source and Install it!
 
-use `crontab -e` to add your regularly work into it, to make it run automaticly.
+First, you must `su bbsadm` to get into BBS system account.
+
+Clone this repository and install into your BBS binary directory (`/home/bbs/bin`):
+`git clone --branch clam-test https://github.com/holishing/AutoWeatherBBS`
+`cp AutoWeatherBBS/weatherBBS.sh /home/bbs/bin/`
+`cp AutoWeatherBBS/weatherBIG5.py /home/bbs/bin/`
+
+Apply an Authorization key of [CWB OpenData](http://opendata.cwb.gov.tw/),
+<br>and edit the `authKey` variable in `/home/bbs/bin/weatherBIG5.py` file
+
+### Setting crontab file for BBS
+
+And use `crontab -e` to add your regularly work into it, to make it run automaticly.
 (If you want to know how to set up, use `man crontab` to get help)
+
+or you can try:
+`crontab -l > ~/crontab.now`
+`cat AutoWeatherBBS/crontab.reference >> ~/crontab.now`
+`crontab ~/crontab.now`
+to add this crontab to run regularly.
+
+***
 
 That's it!
