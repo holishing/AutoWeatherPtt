@@ -37,7 +37,7 @@ def addWColor(s):
     elif cp<= 20:
         return "\x1b[1m"+s+"\x1b[m"
     elif cp<= 40:
-        return "\x15[1;36m"+s+"\x1b[m"
+        return "\x1b[1;36m"+s+"\x1b[m"
     elif cp<= 60:
         return "\x1b[36m"+s+"\x1b[m"
     elif cp<= 80:
@@ -83,6 +83,7 @@ def main():
     root = ET.fromstring(r.text)
 #    print("Analysising Data")
     d = root[8][0][1].text.split("T")[0].split("-")
+
     tle="test"
     if root[8][1][1][1][0].text.split("T")[1].split(':')[0] == '18':
         tle = root[8][1][1][1][0].text.split("T")[0].split('-')[0]+"/"+add0(root[8][1][1][1][0].text.split("T")[0].split('-')[1])+"/"+add0(root[8][1][1][1][0].text.split("T")[0].split('-')[2])+' 晚上'
@@ -90,14 +91,14 @@ def main():
         tle = root[8][1][1][1][0].text.split("T")[0].split('-')[0]+"/"+add0(root[8][1][1][1][0].text.split("T")[0].split('-')[1])+"/"+add0(root[8][1][1][1][0].text.split("T")[0].split('-')[2])+' 中午'
     else:
         tle = root[8][1][1][1][0].text.split("T")[0].split('-')[0]+"/"+add0(root[8][1][1][1][0].text.split("T")[0].split('-')[1])+"/"+add0(root[8][1][1][1][0].text.split("T")[0].split('-')[2])+' 白天'
-    content += ("發布時間："+ turnFull(str( int(d[0])-1911 )) + '年' + turnFull(d[1]) + '月' +  turnFull(d[2]) + '日' + turnFull( root[8][0][1].text.split("T")[1].split(":")[0] ) + "時 ０分\n")
+    content += ("\n發布時間："+ turnFull(str( int(d[0])-1911 )) + '年' + turnFull(d[1]) + '月' +  turnFull(d[2]) + '日' + turnFull( root[8][0][1].text.split("T")[1].split(":")[0] ) + "時 ０分\n")
     content += ("有效時間："+turnFull(root[8][1][1][1][0].text.split("T")[0].split('-')[2]) + '日' + turnFull(root[8][1][1][1][0].text.split("T")[1].split(':')[0]) + '時起至' + turnFull(root[8][1][1][1][1].text.split("T")[0].split('-')[2]) + '日' + turnFull(root[8][1][1][1][1].text.split("T")[1].split(':')[0])+'時\n')
     content += ('\n預 報 分 區 天       氣           雨率   氣溫(攝氏)\n\n')
     for index in range(1,23):
-    content += ('＊' + root[8][index][0].text + '    ' + addN(root[8][index][1][1][2][0].text) + addNinFront( addWColor( turnFull( root[8][index][5][1][2][0].text ) ) ) + "％ " + addTColor(turnFull(root[8][index][3][1][2][0].text)) + " － " +addTColor(turnFull(root[8][index][2][1][2][0].text))+'\n')
+        content += ('＊' + root[8][index][0].text + '    ' + addN(root[8][index][1][1][2][0].text) + addNinFront( addWColor( turnFull( root[8][index][5][1][2][0].text ) ) ) + "％ " + addTColor(turnFull(root[8][index][3][1][2][0].text)) + " － " +addTColor(turnFull(root[8][index][2][1][2][0].text))+'\n')
 
-    content += ( '\n＊備註：各縣市預報係以各縣市政府所在地附近為預報參考位置。\n')
-    content += ('\n---資料來源:中央氣象局---\n---Coded By oToToT    ---')
+    content += ('\n＊備註：各縣市預報係以各縣市政府所在地附近為預報參考位置。\n')
+    content += ('\n----資料來源:中央氣象局---\n--- Coded By oToToT@ptt2 / Adapted by r2@CTB ---\n\n')
 
 # Writing information to "weather.post" text files in Big5 (for BBS system in Taiwan)
     file = open('/home/bbs/etc/weather.post', 'w', encoding = 'Big5')
