@@ -1,3 +1,4 @@
+
 import requests
 import xml.etree.ElementTree as ET
 
@@ -29,7 +30,7 @@ def addTColor(s):
         return "\x1b[31m"+s+"\x1b[m"
     else:
         return "\x1b[1;31m"+s+"\x1b[m"
-    
+
 def addWColor(s):
     cp = int(turnSmall(s))
     if cp == 0:
@@ -51,15 +52,16 @@ def addN(s):
 def turnSmall(s):
     Small = {}
     Small[chr(0xff10) ] = '0'
-    Small['１'] = '1'
-    Small['２'] = '2'
-    Small['３'] = '3'
-    Small['４'] = '4'
-    Small['５'] = '5'
-    Small['６'] = '6'
-    Small['７'] = '7'
-    Small['８'] = '8'
-    Small['９'] = '9'
+    Small[chr(0xff11) ] = '1'
+    Small[chr(0xff12) ] = '2'
+    Small[chr(0xff13) ] = '3'
+    Small[chr(0xff14) ] = '4'
+    Small[chr(0xff15) ] = '5'
+    Small[chr(0xff16) ] = '6'
+    Small[chr(0xff17) ] = '7'
+    Small[chr(0xff18) ] = '8'
+    Small[chr(0xff19) ] = '9'
+
     opt = ''
     for k in range(0,len(s)):
         opt = opt + Small[(s[k])]
@@ -93,6 +95,7 @@ def main():
         tle = root[8][1][1][1][0].text.split("T")[0].split('-')[0]+"/"+add0(root[8][1][1][1][0].text.split("T")[0].split('-')[1])+"/"+add0(root[8][1][1][1][0].text.split("T")[0].split('-')[2])+' 白天'
     content += ("\n發布時間："+ turnFull(str( int(d[0])-1911 )) + '年' + turnFull(d[1]) + '月' +  turnFull(d[2]) + '日' + turnFull( root[8][0][1].text.split("T")[1].split(":")[0] ) + "時 ０分\n")
     content += ("有效時間："+turnFull(root[8][1][1][1][0].text.split("T")[0].split('-')[2]) + '日' + turnFull(root[8][1][1][1][0].text.split("T")[1].split(':')[0]) + '時起至' + turnFull(root[8][1][1][1][1].text.split("T")[0].split('-')[2]) + '日' + turnFull(root[8][1][1][1][1].text.split("T")[1].split(':')[0])+'時\n')
+
     content += ('\n預 報 分 區 天       氣           雨率   氣溫(攝氏)\n\n')
     for index in range(1,23):
         content += ('＊' + root[8][index][0].text + '    ' + addN(root[8][index][1][1][2][0].text) + addNinFront( addWColor( turnFull( root[8][index][5][1][2][0].text ) ) ) + "％ " + addTColor(turnFull(root[8][index][3][1][2][0].text)) + " － " +addTColor(turnFull(root[8][index][2][1][2][0].text))+'\n')
