@@ -1,10 +1,10 @@
-This version is adapted from oToToT's version.
+This version is adapted from [oToToT's version](https://github.com/oToToT/AutoWeatherPtt) .
 
-The reason for making this fork is just to let this python script,
-<br>apply directly in pttbbs or even other TelnetBBS-system (such as Maple-itoc, SOB, or other BBS version)
+The reason for making this fork is just to let this python script
+<br>apply directly in [CurrentPtt BBS System](https://github.com/ptt/pttbbs) or even other Telnet-BBS system (such as Maple-itoc, SOB, or other BBS version)
 
-And it's function going to be made more simply, 
-<br>and just focus on how to simplify the core python script to analyze the info requested from Central Weather Bureau in Taiwan.
+And in the future, its function is going to be made more simply, 
+<br>and just focuses on how to simplify the core python script to analyze the info requested from Central Weather Bureau in Taiwan.
 
 And just for test and fun.
 
@@ -23,7 +23,11 @@ Download `python3` and use `pip` to install `requests`.
 
 ### Get this source and Install it!
 
-First, you must `su bbsadm` to get into BBS system account.
+First, you must
+
+`su bbsadm` 
+
+to get into BBS system account.
 <br>Clone this repository and install into your BBS binary directory (`/home/bbs/bin`):
 
 `git clone https://github.com/holishing/AutoWeatherBBS`
@@ -35,8 +39,16 @@ Apply an Authorization key of [CWB OpenData](http://opendata.cwb.gov.tw/),
 
 ### Setting crontab file for BBS
 
-And use `crontab -e` to add your regularly work into it, to make it run automaticly.
-<br>(If you want to know how to set up, use `man crontab` to get help)
+And use 
+
+`crontab -e` 
+
+to add your regularly work into it, to make it run automaticly.
+<br>(If you want to know how to set up, use 
+
+`man crontab`
+
+to get help)
 
 or you can try:
 
