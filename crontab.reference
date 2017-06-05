@@ -1,4 +1,0 @@
-
-# For AutoWeatherBBS (Usage: in README.md)
-30      5       *       *       *       /bin/sh ~/bin/weatherBBS.sh day
-30      17      *       *       *       /bin/sh ~/bin/weatherBBS.sh night
