@@ -17,7 +17,7 @@ Post daily weather information on ptt or any other bbs.
 
 ## HOWTO
 
-### Install Python3 & "request" module
+### Install Python3 & "requests" module
 
 Download `python3` and use `pip` to install `requests`.
 
