@@ -1,7 +1,8 @@
 This version is adapted from [oToToT's version](https://github.com/oToToT/AutoWeatherPtt) .
 
 The reason for making this fork is just to let this python script
-<br>apply directly in [CurrentPtt BBS System](https://github.com/ptt/pttbbs) or even other Telnet-BBS system (such as Maple-itoc, SOB, or other BBS version)
+<br>apply directly in [CurrentPtt BBS System](https://github.com/ptt/pttbbs), 
+<br>other Telnet-BBS system such as Maple-itoc, SOB, or other BBS version may be more adapted so that the info can be post.
 
 And in the future, its function is going to be made more simply, 
 <br>and just focuses on how to simplify the core python script to analyze the info requested from Central Weather Bureau in Taiwan.
