@@ -16,6 +16,10 @@ And just for test and fun.
 Post daily weather information on ptt or any other bbs.
 <br>This version can be post directly by [CurrentPtt BBS System](https://github.com/ptt/pttbbs).
 
+![](https://i.imgur.com/Nzgov33.png)
+
+![](https://i.imgur.com/3p9USog.png)
+
 ## HOWTO
 
 ### Install Python3 & "requests" module
