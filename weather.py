@@ -5,7 +5,6 @@ import json
 from datetime import datetime
 from getpass import getpass
 import requests
-from SimplePTTClient import PTTClient
 
 def process_argument():
     parser = argparse.ArgumentParser()
@@ -15,12 +14,7 @@ def process_argument():
     from_config.add_argument('config_file', type=argparse.FileType('r'), help='設定檔位置')
 
     from_args = subparsers.add_parser('exec', help='從命令列輸入設定')
-    from_args.add_argument('-u', '--username', type=str, help='登入帳號', default=None)
-    from_args.add_argument('-p', '--password', type=str, help='登入密碼', default=None)
     from_args.add_argument('-k', '--apikey', type=str, help='中央氣象局授權碼', default=None)
-    from_args.add_argument('-b', '--board', type=str, help='發文看板', default=None)
-    from_args.add_argument('-c', '--host', type=str, help='登入主機', default='wss://ws.ptt2.cc/bbs')
-    from_args.add_argument('-o', '--origin', type=str, help='登入來源', default='https://term.ptt2.cc')
     return parser.parse_args()
 
 
@@ -127,26 +121,10 @@ def main():
     if arg.cmd == 'config':
         config = json.load(arg.config_file)
         arg.config_file.close()
-        username = config.get('username', None)
-        password = config.get('password', None)
-        board = config.get('board', None)
         apikey = config.get('apikey', None)
-        host = config.get('host', 'wss://ws.ptt2.cc/bbs')
-        origin = config.get('origin', 'https://term.ptt2.cc')
     elif arg.cmd == 'exec':
-        username = arg.username
-        password = arg.password
-        board = arg.board
         apikey = arg.apikey
-        host = arg.host
-        origin = arg.origin
 
-    if not username:
-        username = input('登入帳號: ')
-    if not password:
-        password = getpass('登入密碼: ')
-    if not board:
-        board = input('發文看板: ')
     if not apikey:
         apikey = getpass('中央氣象局授權碼: ')
 
@@ -154,12 +132,8 @@ def main():
     content = generate_post_content(data)
     title = generate_post_title(data)
 
-    client = PTTClient(host, origin)
-    if not client.login(username, password):
-        print("Login Failed!")
-        return
-    client.post(board, title, content)
-
+    with open(f'output.txt', 'w') as f:
+        f.write(content)
 
 if __name__ == '__main__':
     main()
