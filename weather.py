@@ -32,18 +32,18 @@ def datetime2str(dt):
 def tcolor(s):
     tem = int(s)
     if tem <= 10:
-        return f"\x15[1;34m{s}\x15[m"
+        return f"\x1b[1;34m{s}\x1b[m"
     if tem <= 15:
-        return f"\x15[36m{s}\x15[m"
+        return f"\x1b[36m{s}\x1b[m"
     if tem <= 20:
-        return f"\x15[1;36m{s}\x15[m"
+        return f"\x1b[1;36m{s}\x1b[m"
     if tem <= 25:
-        return f"\x15[1;33m{s}\x15[m"
+        return f"\x1b[1;33m{s}\x1b[m"
     if tem <= 30:
-        return f"\x15[1;35m{s}\x15[m"
+        return f"\x1b[1;35m{s}\x1b[m"
     if tem <= 35:
-        return f"\x15[31m{s}\x15[m"
-    return f"\x15[1;31m{s}\x15[m"
+        return f"\x1b[31m{s}\x1b[m"
+    return f"\x1b[1;31m{s}\x1b[m"
 
 
 def rcolor(s):
@@ -51,14 +51,14 @@ def rcolor(s):
     if rain == 0:
         return s
     if rain <= 20:
-        return f"\x15[1m{s}\x15[m"
+        return f"\x1b[1m{s}\x1b[m"
     if rain <= 40:
-        return f"\x15[1;36m{s}\x15[m"
+        return f"\x1b[1;36m{s}\x1b[m"
     if rain <= 60:
-        return f"\x15[36m{s}\x15[m"
+        return f"\x1b[36m{s}\x1b[m"
     if rain <= 80:
-        return f"\x15[1;34m{s}\x15[m"
-    return f"\x15[34m{s}\x15[m"
+        return f"\x1b[1;34m{s}\x1b[m"
+    return f"\x1b[34m{s}\x1b[m"
 
 
 def generate_post_content(data):
