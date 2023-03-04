@@ -98,7 +98,6 @@ def generate_post_content(data):
 
 ---資料來源:中央氣象局---
 ---  Coded By oToToT  ---'''
-    content = content.replace('\n', '\r\n')
     return content
 
 
